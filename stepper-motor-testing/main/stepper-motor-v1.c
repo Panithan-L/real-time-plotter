@@ -1,7 +1,5 @@
 /* File: stepper-motor-v1.c
-Notes: Created functions "stepper_forward" and "stepper_reverse", which controls
-        the stepper motor for a given number of [inputted] step counts. Steps are 
-        actuated at an [inputted] delay time.  
+Notes: Controlling a stepper motor manually.  
 */
 
 //Header Files
@@ -46,7 +44,7 @@ void app_main(void)
 
     while(1)
     {
-        // Note: vTaskDelay(tick_input) - time_input
+        // Note: vTaskDelay(tick_input) - time_input is in ticks for RTOS ~ approximately 10 milliseconds? 
         gpio_set_level(STEPPER_IN_1, 1);
         vTaskDelay(delay_time);
         gpio_set_level(STEPPER_IN_1, 0);
