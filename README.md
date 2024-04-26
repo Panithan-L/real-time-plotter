@@ -1,2 +1,2 @@
 # esp32
-ESP32 with ESP-IDF
+Adafruit ESP32 Feather V2 with ESP-IDF
