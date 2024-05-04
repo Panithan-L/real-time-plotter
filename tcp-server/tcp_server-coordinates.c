@@ -832,7 +832,7 @@ void app_main(void)
     /**********************************************************************************************/
     /*Initializing Timer Interrupt Frequencies*/
     //Stepper Motor timer interrupt frequency, in microseconds
-    int stepper_servo_motor_timer = 10000;
+    int stepper_servo_motor_timer = 15000;
 
     const esp_timer_create_args_t my_motor_timer_args = {
         .callback = &stepper_servo_motor_timer_callback,
@@ -1007,7 +1007,7 @@ void write_coordinate(int new_x_element, int new_y_element, int new_servo_positi
 void stepper_servo_motor_timer_callback(void *param)
 {
     //Timer callback to drive the stepper motor and blink onboard LED
-    printf("X and Y Coordinates: %d, %d \n", x_coordinates[cnt_x], y_coordinates[cnt_y]);
+    // printf("X and Y Coordinates: %d, %d \n", x_coordinates[cnt_x], y_coordinates[cnt_y]);
 
     //State Machine - X Axis
     if (x_current < x_coordinates[cnt_x])
